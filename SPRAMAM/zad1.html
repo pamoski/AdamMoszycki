@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Moszycki kl3i gr2 A</title>
+</head>
+<body>
+    <input type="text" id="tekst1">
+    <input type="text" id="tekst2">
+<button id="pokaz">Pokaż</button>
+<div id="wynik1"></div>
+<div id="wynik2"></div>
+        <script>
+            
+             const wynik1=document.querySelector('#wynik1');
+            const wynik2=document.querySelector('#wynik2');
+const pokaz=document.querySelector('#pokaz');
+const one=document.querySelector('#tekst1');
+const two=document.querySelector('#tekst2');
+      
+pokaz.addEventListener("click", function(){
+	wynik1.innerHTML=one.value;
+   
+
+  console.log(typeof one.value);
+});
+pokaz.addEventListener("click", function(){
+	wynik2.innerHTML=two.value;
+   
+
+  console.log(typeof two.value);
+});
+
+        </script>
+</body>
+</html>
