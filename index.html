@@ -1,62 +1,56 @@
-<!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport">
-    <title>PierwszyProgram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przykłady programowania obiektowego w JS</title>
+
 </head>
-
-
 <body>
-    <form action="">
-<input type="text" name="pole" />
-<button type="sumbit"> Pokaż</button>
-
-    </form>
-
-    <div class="wynik"> </div>
+    <div> </div>
+    <script src="Komis.js"></script>
+    <script src="Samochod.js"></script>
     <script>
-//odwołujemy się do formularza pobieramy ten formularz
-const formularz = document.querySelector('form');
+//tutaj dziaalmy z klasą samochoód
+//utwórzmy jakis przykładowy ovbiekt
+const fordzik = new Samochod('Ford', 'Mondeo', 3000, 2003, 9);
+  console.log(fordzik);
+
+
+const polonezik = new Samochod('FSO', 'Polonez', 10000, 1985, 10);
+  console.log(polonezik);
+
+  console.log(fordzik.wiek());
+  console.log(polonezik.wiek());
+
+  console.log(fordzik.koszt());
+  console.log(polonezik.koszt());
+
+//tworzymy nowy komis(nowy obiekt na bazie klasy komis)
+    const scam = new Komis('Scam');
+    console.log(scam);
+
+    //dodajemy do naszeho komisu pierwszy samochód
+    scam.dodajSamochod(fordzik);
+    console.log();
+    scam.dodajSamochod(polonezik);
 
 
 
-//odwołujemy sie do naszego div o klasie wynik
-const div = document.querySelector('.wynik');
-//przypisujemy zdarzenie do naszego formularza które uruchomi funkcję przez przeglądarke, zdarzenie nazywa się sumbit
-formularz.addEventListener('submit', (e) => {
-    //zatrzymujemy domyslna akcje przeglądrarki w przypadku fomrulasza
-    e.preventDefault();
-    //odwołanie do pola w formularzu i pobieranie jego wartosci
-    const wartoscPolaFormularza = document.querySelector('input[name = "pole"]').value;
+    //wyświetlamy dane wszystkich samochodów w komisie
 
-if(wartoscPolaFormularza % 2 == 0){
-    div.textContent = 'liczba jest parzysta';
+    scam.wyswietlSamochody();
 
-}else{
-    div.textContent = 'liczba jest nieparzysta';
-} 
-  if(wartoscPolaFormularza > 5){
-    div.textContent = 'liczba jest większa od 5';
+const kijanka = new Samochod('KIA','Ceed', 20000, 2017, 10);
 
-} else{
-    div.textContent = 'liczba jest mniejsza od 5';
-}
+scam.dodajSamochod(kijanka);
+scam.wyswietlSamochody();
 
 
-
-
-
-
-
-//wartosc pola formualrza wrzucamy do diva
-//div.textContent = wartoscPolaFormularza;
-
-
-
-
-});
     </script>
+
+
+
+
 </body>
 </html>

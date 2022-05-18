@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .tekst{
+        background-color: black;
+        color: white;
+        padding: 10px;
+        }
+        .zmiana{
+        background-color: rebeccapurple;
+        color: gold;
+        }
+            </style>
+<h2>Współrzędna Y kursora myszy:</h2>
+<h2>Współrzędna X kursora myszy:</h2>
+
+<script>
+    //povieramy wszystkie naglowki h2
+    const naglowki = document.querySelectorAll('h2');
+    //obsluga zdarzenia ruchu kursora myszy
+    document.addEventListener('mousemove', function(event){
+        //współrzędna X kursora myszy - event.clientX
+        //współrzędna Y kursora myszy - event.clientY
+
+    });
+</script>
+ 
+
+
+
+
+
+
+
+   
+    <div class="tekst">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita deleniti sapiente cum debitis, corporis quae. 
+        Molestias maiores at eos deleniti, atque animi? Repudiandae assumenda nulla molestiae ipsa, quibusdam quidem inventore.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita deleniti sapiente cum debitis, corporis quae. 
+        Molestias maiores at eos deleniti, atque animi? Repudiandae assumenda nulla molestiae ipsa, quibusdam quidem inventore.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita deleniti sapiente cum debitis, corporis quae. 
+        Molestias maiores at eos deleniti, atque animi? Repudiandae assumenda nulla molestiae ipsa, quibusdam quidem inventore.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita deleniti sapiente cum debitis, corporis quae. 
+        Molestias maiores at eos deleniti, atque animi? Repudiandae assumenda nulla molestiae ipsa, quibusdam quidem inventore.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita deleniti sapiente cum debitis, corporis quae. 
+        Molestias maiores at eos deleniti, atque animi? Repudiandae assumenda nulla molestiae ipsa, quibusdam quidem inventore.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita deleniti sapiente cum debitis, corporis quae. 
+        Molestias maiores at eos deleniti, atque animi? Repudiandae assumenda nulla molestiae ipsa, quibusdam quidem inventore.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita deleniti sapiente cum debitis, corporis quae. 
+        Molestias maiores at eos deleniti, atque animi? Repudiandae assumenda nulla molestiae ipsa, quibusdam quidem inventore.
+    </div>
+    <script>
+        function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+ //pobieramy diva
+ const divZeStrony = document.querySelector('div');
+ const napisy = ['Rysio ma tatuaż','Mucha leci samolotem','Sęku w klatce','Sowa porywa Szczygła']
+ //przypisujemy obsluge zdarzenia najechania kursosrem myszy na diva
+divZeStrony.addEventListener('mouseover', function () {
+ //divZeStrony.style.color = 'yellow';
+ divZeStrony.classList.add('zmiana')
+});
+//przypisujemy obsługe zdarzenia zjechania kursorem myszy z diva
+divZeStrony.addEventListener('mouseout', function () {
+ //divZeStrony.style.color = 'white';
+ divZeStrony.classList.remove('zmiana');
+});
+//przypisujemy obsługe zdarzenia klikania w diva
+divZeStrony.addEventListener('click', function(){
+    let los = getRandomIntInclusive(0, 3);
+//podmieniamy tresć diva na nową
+divZeStrony.textContent = napisy[los];
+ 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

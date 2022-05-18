@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: space-between;
+            width: 450px;
+            padding: 10px 0;
+        }
+    </style>
+    
+</head>
+<body>
+    <form action="">
+        <div >
+        <label  for="red">Wpisz wartośc koloru czerwonego</label>
+        <input type="number" name="red" id="red">
+        </div>
+        <span class="error"></span>
+        <div>
+        <label for="green">Wpisz wartośc koloru zielonego</label>
+        <input type="number" name="green" id="green">
+        </div>
+        <span class="error"></span>
+        <div >
+        <label for="blue">Wpisz wartośc koloru niebieskiego</label>
+        <input type="number" name="blue" id="blue">
+       </div>
+       <span class="error"></span>
+       <div>
+           <input type="submit" value="zmien kolor tła" />
+       </div>
+      
+    </form>
+    <script>
+//pobieramy formularz w celu jego obsługi
+const formularz = document.querySelector('form');
+//pobieramy elementy formularza (inputy, bez submitu)
+const inputRed = document.querySelector('input[name="red"]');
+const inputGreen = document.querySelector('input[name="green"]');
+const inputBlue = document.querySelector('input[name="blue"]');
+
+
+
+//pobieramy jednoczesnie wszystkie errory
+const errors = document.querySelectorAll('span.error')
+//obsluga zdarzenia submit na formularzu
+formularz.addEventListener('submit', function(e) {
+//poniższy kod wykona sie kiedyklikniemy w przycisk submit
+
+e.preventDefault();//zatrzymanie domyslnej akcji
+
+//pobieramy wartości wpisane przez użytkownika
+const red = inputRed.value;
+const green = inputGreen.value;
+const blue = inputBlue.value;
+//wyczyszczenie informacji o błedach
+errors.forEach(error=>{
+    //nasz error to nic innego jka poszczególny element spanu
+    errors.textContent = '';
+});
+
+
+
+
+
+
+//walidacja pól
+if(red < 0 || red > 255){
+    errors[0].textContent = 'Wartość musi zawierać się w przedziale 0-255';
+    return false;
+}
+if(green< 0 || green > 255){
+    errors[1].textContent = 'Wartość musi zawierać się w przedziale 0-255';
+    return false;
+}
+if(blue < 0 || blue > 255){
+    errors[2].textContent = 'Wartość musi zawierać się w przedziale 0-255';
+    return false;
+}
+
+
+
+
+
+//zmienimay kolor tła strony
+document.body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+});
+
+
+
+
+    </script>
+
+</body>
+</html>
