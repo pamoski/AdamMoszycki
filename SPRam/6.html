@@ -1,0 +1,71 @@
+<!--********************** KRZYSZTOF KĄDZIOŁKA, ZADANIE 6 **************************-->
+<!--Napisz prosty kalkulator. Po uruchomieniu program powinien pytać o rodzaj działania do wykonania. Wybór następuje poprzez wpisanie znaku:
+’*’ – mnożenie
+’/’ – dzielenie
+Po wybraniu rodzaju działania, program wczytuje dwie liczby i wykonuje wybrane działanie. Na ekranie powinien wyświetlić się komunikat, jakie wybrano działanie, jakie liczby wczytano i jaki jest wynik.-->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div + div{
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" name="liczba1" placeholder="podaj liczbe 1:">
+        <input type="number" name="liczba2" placeholder="podaj liczbe 2:">
+    </div>    
+
+    <div>
+        <button>Iloczyn</button>
+        <button>Iloraz</button>
+    </div>
+
+    <div>
+        Wynik 
+    </div>
+
+    <script>
+       const btns = document.querySelectorAll('button');
+       const divResults = document.querySelector('div+div+div') 
+       const input1 = document.querySelector("input[name='liczba1']");
+       const input2 = document.querySelector("input[name='liczba2']");
+        
+        function mnozenie(l1, l2){
+            return l1*l2;
+        };
+        const dzielenie = function(l1, l2){
+            return l1 / l2;
+        };
+
+        btns[0].addEventListener('click', function() {
+        const liczba1 = input1.value; 
+        const liczba2 = input2.value;
+        divResults.textContent = 'Iloczyn liczb wynosi '+ mnozenie (liczba1, liczba2);
+        });
+
+        btns[1].addEventListener('click', function() {
+        const liczba1 = input1.value; 
+        const liczba2 = input2.value;
+        divResults.textContent = 'Iloraz liczb wynosi '+ dzielenie (liczba1, liczba2);
+       
+        if(0==liczba1){
+            document.write("Nie dzielimy przez zero")
+        }
+        else if(liczba2==0){
+            document.write("Nie dzielimy przez zero")
+        }
+        });
+    </script>
+    
+</body>
+</html>

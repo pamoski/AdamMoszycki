@@ -1,0 +1,177 @@
+<!--********************** KRZYSZTOF KĄDZIOŁKA, ZADANIE 6 **************************-->
+<!--Napisz prosty kalkulator. Po uruchomieniu program powinien pytać o rodzaj działania do wykonania. Wybór następuje poprzez wpisanie znaku:
+’*’ – mnożenie
+’/’ – dzielenie
+Po wybraniu rodzaju działania, program wczytuje dwie liczby i wykonuje wybrane działanie. Na ekranie powinien wyświetlić się komunikat, jakie wybrano działanie, jakie liczby wczytano i jaki jest wynik.-->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div + div{
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" name="liczba1" placeholder="podaj liczbe 1:">
+        <input type="number" name="liczba2" placeholder="podaj liczbe 2:">
+    </div>    
+
+    <div>
+        <button>Iloczyn</button>
+        <button>Iloraz</button>
+    </div>
+
+    <div>
+        Wynik 
+    </div>
+
+    <script>
+       const btns = document.querySelectorAll('button');
+       const divResults = document.querySelector('div+div+div') 
+       const input1 = document.querySelector("input[name='liczba1']");
+       const input2 = document.querySelector("input[name='liczba2']");
+        
+        function mnozenie(l1, l2){
+            return l1*l2;
+        };
+        const dzielenie = function(l1, l2){
+            return l1 / l2;
+        };
+
+        btns[0].addEventListener('click', function() {
+        const liczba1 = input1.value; 
+        const liczba2 = input2.value;
+        divResults.textContent = 'Iloczyn liczb wynosi '+ mnozenie (liczba1, liczba2);
+        });
+
+        btns[1].addEventListener('click', function() {
+        const liczba1 = input1.value; 
+        const liczba2 = input2.value;
+        divResults.textContent = 'Iloraz liczb wynosi '+ dzielenie (liczba1, liczba2);
+       
+        if(0==liczba1){
+            document.write("Nie dzielimy przez zero")
+        }
+        else if(liczba2==0){
+            document.write("Nie dzielimy przez zero")
+        }
+        });
+    </script>
+    
+</body>
+</html>
+-->
+
+
+
+
+
+
+
+<!--********************** KRZYSZTOF KĄDZIOŁKA, ZADANIE 4 **************************-->
+<!--Napisz funkcję obliczającą silnię liczby. Liczbę przekazujemy do funkcji jako argument. Wynik działania funkcji wyświetl na ekranie.-->
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <html>
+<head>
+</head>
+<body>
+
+Wpisz liczbe: <input type="text" id="liczba"/>
+<input type="button" onclick="silnia()" value="Policz silnie"><br/>
+<input type="text" id="wynik" readonly/>
+
+<script type="text/javascript">
+
+function silnia()
+{
+        wynik = 1;
+        n = document.getElementById("liczba").value;
+        while (n > 0 )
+        {
+                wynik = wynik * n;
+                n = n - 1;
+        }
+        document.getElementById("wynik").value = wynik;
+}
+</script>
+</body>
+</html>
+</body>
+</html>
+-->
+
+
+
+
+
+
+
+<!--********************** KRZYSZTOF KĄDZIOŁKA, ZADANIE 2 **************************-->
+<!--Napisz funkcję wyznaczającą najmniejszą liczbę z trzech liczb podanych przez użytkownika. Liczby przekazujemy do funkcji jako argumenty. Wynik działania funkcji wyświetl na ekranie.-->
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <script>
+            const liczba = prompt("Podaj liczbe a: ");
+            const liczba1 = prompt("Podaj liczbe b: ");
+            const liczba2 = prompt("Podaj liczbe c: ");
+            const divMaksimum = document.querySelector('div.maksimum');
+
+            if(liczba>liczba1 || liczba>liczba2){
+                document.write("Liczba pierwsza jest największa")
+            }
+            else if( liczba1>liczba || liczba1>liczba2){
+                document.write("Liczba druga jest największa")
+            }
+            else if( liczba2>liczba || liczba2>liczba1){
+                document.write("Liczba trzecia jest największa")
+            }
+            else{
+                document.write("Żadna z liczb nie jest największa")
+            }
+        </script>
+
+</body>
+</html>
+-->
+
+
+
+
+
