@@ -1,0 +1,100 @@
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie</title>
+</head>
+<body>
+<div class="tablica"></div>
+<div class="suma"></div>
+<div class="ileZer"></div>
+
+
+
+
+
+
+<input type="number" name="liczba">
+<button>Policz</button>
+<div class="ileLiczba"></div>
+
+
+
+
+<script>
+
+/* Skryptktórego zadaniem jest uporządkowanie i wyświetlenie dwóch liczb naturalnych. 
+Do porządkowania liczb należy wykorzystać instrukcję warunkową. Wynik działania zaprezentuj na stronie. 
+Uwzględnij też równość liczb. 
+Użytkownik ma mieć możliwość wyboru między porządkowaniem rosnącym a malejącym.
+
+Rezultaty podlegające ocenie:
+- napisanie skryptu w języku JavaScript,
+- dołączenie skryptu do kodu HTML strony,
+- zaprojektowanie strony internetowej prezentującej wyniki aplikacji w sposób czytelny,
+- sprawdzenie, czy strona i skrypt uruchamiają się poprawnie,
+- sprawdzenie, czy wyniki wyświetlają się poprawnie. */
+
+    function getRandomIntInclusive(min, max) { 
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+const divTablica = document.querySelector('.tablica');
+const divSuma = document.querySelector('.suma');
+const divileZer = document.querySelector('.ileZer');
+const liczby = [];
+let suma = 0;
+let ileZer = 0;
+
+
+
+for(let i = 0; i < 100; i++)
+{
+//liczby[i] = Math.round(Math.random() * 100);
+liczby[i] = getRandomIntInclusive(0, 100);
+suma += liczby[i];
+
+
+}
+
+for (const l of liczby) {
+    if(l == 0) ileZer++;
+    
+}
+
+
+divTablica.textContent = liczby.join(', ');
+divSuma.textContent = "Suma liczb tablicy wynosi: " + suma;
+divileZer.textContent = "Ilość zer w tablicy wynosi: " + ileZer;
+
+
+const button = document.querySelector('button');
+const divIleLiczba = document.querySelector('.ileliczba');
+button.addEventListener('click', ()=>{
+const liczba = document.querySelector('input[name="liczba"]').value * 1;
+let ileLiczba = 0;
+for (const l of liczby) {
+    if(l == liczba) ileLiczba++;
+    
+}
+
+
+divIleLiczba.textContent = `Liczba ${liczba} w tablicy występuje ${ileLiczba} raz(y)`;
+});
+
+
+
+
+</script>    
+
+    
+</body>
+</html>

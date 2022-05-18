@@ -1,0 +1,44 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPRAWDZIAN</title>
+</head>
+<body>
+    <div>podaj do kolumn kolejno:
+        1-imie,2-nazwisko,3-email,4-wiek,5-wzrost
+    </div>
+    <form action="" method="POST">
+        <input type="text" name="jeden">
+        <input type="text" name="dwa">
+         <input type="text" name="trzy">
+         <input type="number" name="cztery">
+         <input type="number" name="5">
+         <input type="submit">
+
+        
+
+    </form>
+    <div></div>
+    <script>
+const form = document.querySelector('form');
+const div = document.querySelector('div');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    
+    let imie = document.querySelector('input[name="one"]');
+    let nazwisko = document.querySelector('input[name="two"]');
+    let email = document.querySelector('input[name="three"]');
+    let wiek = parseInt(document.querySelector('input[name="four"]').value);
+    let wzrost = parseInt(document.querySelector('input[name="five"]').value);
+    div.textContent = `imie: ${imie} nazwisko: ${nazwisko} email: ${email} wiek: ${wiek} wzrost: ${wzrost}`;
+
+
+});
+    </script>
+
+
+</body>
+</html>
